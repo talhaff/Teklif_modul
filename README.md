@@ -2,6 +2,8 @@
 
 Bu proje **MRC YALITIM & SÖVE** firması için özel olarak geliştirilmiş, tamamen istemci tarafında (client-side) çalışan, Excel gereksinimini ortadan kaldıran modern bir Teklif Oluşturma ve Maliyet Hesaplama platformudur.
 
+## Canlı Link : teklifmodul.netlify.app
+ 
 ## Özellikler
 
 - 🚀 **Tamamen İstemci Taraflı (SPA):** Sunucuya veya veritabanına ihtiyaç duymaz. Hızlı ve güvenlidir.
