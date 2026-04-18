@@ -9,13 +9,28 @@
 }
 
 /* Print specific styles and shadow for a4 preview */
+.a4-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
 .a4-paper {
   aspect-ratio: 1 / 1.4142;
-  width: 100%;
-  max-width: 210mm;
+  width: 210mm;
   min-height: 297mm;
-  margin: 0 auto;
   background: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   padding: 10mm;
+  transform-origin: top center;
+}
+
+/* Mobil cihazlarda A4 belgesini sığdırmak için ölçeklendirme */
+@media (max-width: 768px) {
+  .a4-paper {
+    transform: scale(var(--a4-scale, 1));
+    margin-bottom: calc(-297mm * (1 - var(--a4-scale, 1)));
+  }
 }

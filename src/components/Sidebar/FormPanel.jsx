@@ -35,23 +35,23 @@ function FormPanel({
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Alıcı Firma</label>
-            <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold" 
+            <input type="text" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold transition-shadow" 
                    value={headerInfo.aliciFirma} onChange={e => setHeaderInfo({...headerInfo, aliciFirma: e.target.value})} />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">İlgili Kişi</label>
-            <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold" 
+            <input type="text" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold transition-shadow" 
                    value={headerInfo.ilgili} onChange={e => setHeaderInfo({...headerInfo, ilgili: e.target.value})} />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Proje Adı</label>
-              <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold" 
+              <input type="text" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold transition-shadow" 
                      value={headerInfo.proje} onChange={e => setHeaderInfo({...headerInfo, proje: e.target.value})} />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Tarih</label>
-              <input type="date" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold" 
+              <input type="date" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold transition-shadow" 
                      value={headerInfo.tarih} onChange={e => setHeaderInfo({...headerInfo, tarih: e.target.value})} />
             </div>
           </div>
@@ -103,18 +103,18 @@ function FormPanel({
               <div className="space-y-3">
                 <div>
                   <label className="block text-xs font-medium text-gray-500">Ürün Adı</label>
-                  <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold text-sm" 
+                  <input type="text" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold text-sm transition-shadow" 
                          value={item.urunAdi} onChange={e => handleItemChange(item.id, 'urunAdi', e.target.value)} placeholder="Örn: 5X46,5 EPS KAT SİLMESİ" />
                 </div>
                 <div className="flex gap-2">
                   <div className="w-1/3">
                     <label className="block text-xs font-medium text-gray-500">Miktar</label>
-                    <input type="number" min="0" step="any" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold text-sm" 
+                    <input type="number" min="0" step="any" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold text-sm transition-shadow" 
                            value={item.miktar} onChange={e => handleItemChange(item.id, 'miktar', e.target.value)} />
                   </div>
                   <div className="w-1/4">
                     <label className="block text-xs font-medium text-gray-500">Birim</label>
-                    <select className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold text-sm"
+                    <select className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-2 border focus:ring-brand-gold focus:border-brand-gold text-sm transition-shadow"
                             value={item.birim} onChange={e => handleItemChange(item.id, 'birim', e.target.value)}>
                       <option value="AD">AD</option>
                       <option value="MT">MT</option>
@@ -126,7 +126,7 @@ function FormPanel({
                   </div>
                   <div className="flex-1">
                     <label className="block text-xs font-medium text-gray-500">B. Fiyat</label>
-                    <input type="number" min="0" step="any" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:ring-brand-gold focus:border-brand-gold text-sm" 
+                    <input type="number" min="0" step="any" className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm py-3 px-4 border focus:ring-brand-gold focus:border-brand-gold text-sm transition-shadow" 
                            value={item.birimFiyat} onChange={e => handleItemChange(item.id, 'birimFiyat', e.target.value)} />
                   </div>
                 </div>
@@ -149,12 +149,12 @@ function FormPanel({
       </section>
 
       {/* Sticky Download Button for Panel */}
-      <div className="fixed bottom-0 left-0 w-full max-w-md p-4 bg-white border-t border-gray-200">
+      <div className="fixed bottom-0 left-0 w-full md:max-w-md p-4 bg-white border-t border-gray-200 shadow-up z-30">
         <button 
           onClick={handleDownload}
-          className="w-full bg-brand-green hover:bg-green-800 text-white font-bold py-3 px-4 rounded-lg flex justify-center items-center gap-2 shadow-lg transition-colors"
+          className="w-full bg-brand-green hover:bg-green-800 text-white font-bold py-4 px-4 rounded-xl flex justify-center items-center gap-2 shadow-lg transition-all active:scale-95"
         >
-          <Download size={20} /> PDF OLARAK İNDİR
+          <Download size={22} /> PDF OLARAK İNDİR
         </button>
       </div>
 
