@@ -10,6 +10,8 @@ function FormPanel({
   footerNotes, setFooterNotes 
 }) {
   
+  const [isGenerating, setIsGenerating] = React.useState(false);
+
   const handleItemChange = (id, field, value) => {
     setItems(items.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
@@ -23,8 +25,13 @@ function FormPanel({
   };
 
   const handleDownload = async () => {
-    const filename = `Teklif_${headerInfo.aliciFirma.replace(/\s+/g, '_')}_${headerInfo.tarih}.pdf`;
-    await generatePDF('pdf-content', filename);
+    setIsGenerating(true);
+    // Give state a moment to render if needed, then generate
+    setTimeout(async () => {
+      const filename = `Teklif_${headerInfo.aliciFirma.replace(/\s+/g, '_')}_${headerInfo.tarih}.pdf`;
+      await generatePDF('pdf-content', filename);
+      setIsGenerating(false);
+    }, 100);
   };
 
   return (
@@ -152,9 +159,19 @@ function FormPanel({
       <div className="fixed bottom-0 left-0 w-full md:max-w-md p-4 bg-white border-t border-gray-200 shadow-up z-30">
         <button 
           onClick={handleDownload}
-          className="w-full bg-brand-green hover:bg-green-800 text-white font-bold py-4 px-4 rounded-xl flex justify-center items-center gap-2 shadow-lg transition-all active:scale-95"
+          disabled={isGenerating}
+          className={`w-full ${isGenerating ? 'bg-gray-400' : 'bg-brand-green hover:bg-green-800'} text-white font-bold py-4 px-4 rounded-xl flex justify-center items-center gap-2 shadow-lg transition-all active:scale-95`}
         >
-          <Download size={22} /> PDF OLARAK İNDİR
+          {isGenerating ? (
+            <>
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+              HAZIRLANIYOR...
+            </>
+          ) : (
+            <>
+              <Download size={22} /> PDF OLARAK İNDİR
+            </>
+          )}
         </button>
       </div>
 

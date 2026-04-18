@@ -51,15 +51,19 @@ function MainGrid(props) {
         </button>
       </div>
 
-      {/* Form Panel - Hide on mobile if preview tab is active */}
-      <div className={`w-full md:max-w-md bg-white border-r border-gray-200 overflow-y-auto ${activeTab === 'preview' ? 'hidden md:block' : 'block'}`} style={{ height: window.innerWidth >= 768 ? 'calc(100vh - 64px)' : 'auto' }}>
+      {/* Form Panel - In mobile, move off-screen instead of hidden */}
+      <div className={`w-full md:max-w-md bg-white border-r border-gray-200 overflow-y-auto transition-all ${
+        activeTab === 'preview' ? 'max-md:hidden' : 'block'
+      }`} style={{ height: window.innerWidth >= 768 ? 'calc(100vh - 64px)' : 'auto' }}>
         <FormPanel {...props} />
       </div>
       
-      {/* Preview Panel - Hide on mobile if form tab is active */}
+      {/* Preview Panel - In mobile, keep in DOM even when not active tab so PDF can be generated */}
       <div 
         ref={previewContainerRef}
-        className={`flex-1 overflow-y-auto bg-gray-200 p-4 md:p-8 flex justify-center ${activeTab === 'form' ? 'hidden md:flex' : 'flex'}`}
+        className={`flex-1 overflow-y-auto bg-gray-200 p-4 md:p-8 flex justify-center transition-all ${
+          activeTab === 'form' ? 'max-md:fixed max-md:opacity-0 max-md:pointer-events-none' : 'flex opacity-100'
+        }`}
         style={{ 
           height: window.innerWidth >= 768 ? 'calc(100vh - 64px)' : 'auto',
           '--a4-scale': scale
