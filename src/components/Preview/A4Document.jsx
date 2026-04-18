@@ -9,7 +9,7 @@ function A4Document({ headerInfo, settings, items, calculatedItems, totals, foot
       {/* Decorative top stripe */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-green via-brand-dark to-brand-gold"></div>
       
-      <div className="flex-1 flex flex-col pt-8 pb-4">
+      <div className="flex-1 flex flex-col pt-2 pb-4">
         <DocumentHeader headerInfo={headerInfo} />
         <DocumentTable items={calculatedItems} settings={settings} totals={totals} />
         <DocumentFooter footerNotes={footerNotes} />

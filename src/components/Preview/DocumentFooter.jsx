@@ -2,10 +2,10 @@ import React from 'react';
 
 function DocumentFooter({ footerNotes }) {
   return (
-    <div className="mt-8 flex flex-col pt-4 h-full">
+    <div className="mt-4 flex flex-col pt-4 h-full">
       
       {/* Signature and Notes Section */}
-      <div className="flex justify-between items-start mb-12 px-2 flex-1">
+      <div className="flex justify-between items-start mb-6 px-2 flex-1">
         {/* Dynamic Notes */}
         <div className="w-2/3 pr-8">
           <div className="bg-gray-50 border-l-4 border-brand-green p-4 rounded-r-lg">
@@ -34,11 +34,11 @@ function DocumentFooter({ footerNotes }) {
       <div className="bg-brand-dark text-white rounded-t-xl overflow-hidden mt-auto mx-2 flex justify-between items-center shadow-md">
          {/* Gold accent line */}
          <div className="w-1.5 h-full bg-brand-gold absolute left-0 bottom-0"></div>
-         <div className="py-4 px-6 flex-1 flex flex-col justify-center border-r border-gray-700/50">
+         <div className="py-3 px-6 flex-1 flex flex-col justify-center border-r border-gray-700/50">
             <div className="font-bold text-sm tracking-wide mb-1 text-brand-gold">MRC YALITIM İNŞAAT SAN. TİC. LTD. ŞTİ.</div>
             <div className="text-xs text-gray-300">1.OSB MAHALLESİ 5.CADDE NO:13/2</div>
          </div>
-         <div className="py-4 px-6 flex flex-col justify-center items-end min-w-[180px]">
+         <div className="py-3 px-6 flex flex-col justify-center items-end min-w-[180px]">
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-0.5">İletişim</div>
             <div className="font-bold text-sm tracking-wider">0532 258 52 44</div>
          </div>
