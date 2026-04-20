@@ -22,7 +22,6 @@ function DocumentHeader({ headerInfo }) {
         </div>
         <div className="text-right">
           <h2 className="text-4xl font-light tracking-widest text-brand-dark mb-1">TEKLİF <span className="font-bold text-brand-gold">FORMU</span></h2>
-          <p className="text-xs text-gray-400 font-medium tracking-wider">REF NO: {Date.now().toString().slice(-6)} / {new Date().getFullYear()}</p>
         </div>
       </div>
 
