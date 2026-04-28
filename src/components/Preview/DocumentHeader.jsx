@@ -14,11 +14,11 @@ function DocumentHeader({ headerInfo }) {
   };
 
   return (
-    <div className="mb-4 px-2 pt-24">
+    <div className="mb-4 px-2 pt-40">
       {/* Top Section with Logo and Title */}
       <div className="flex justify-between items-end pb-2 mb-4 border-b border-gray-300 relative h-16">
         <div className="absolute -left-8 -bottom-4">
-           <img src="/logo.png" alt="MRC YALITIM Logo" className="h-[14rem] mix-blend-multiply object-contain" />
+           <img src="/logo.png" alt="MRC YALITIM Logo" className="h-[18rem] mix-blend-multiply object-contain" />
         </div>
         <div className="text-right w-full">
           <h2 className="text-4xl font-light tracking-widest text-brand-dark mb-1">TEKLİF <span className="font-bold text-brand-gold">FORMU</span></h2>
