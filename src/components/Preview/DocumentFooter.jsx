@@ -24,7 +24,7 @@ function DocumentFooter({ footerNotes }) {
 
         {/* Signature Area */}
         <div className="w-1/3 flex flex-col items-center pt-2">
-          <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-12">Müşteri Onayı</div>
+          <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Müşteri Onayı</div>
           <div className="w-3/4 border-b border-gray-400"></div>
           <div className="text-[10px] text-gray-400 mt-2">Kaşe / İmza</div>
         </div>
@@ -34,11 +34,11 @@ function DocumentFooter({ footerNotes }) {
       <div className="bg-brand-dark text-white rounded-t-xl overflow-hidden mt-auto mx-2 flex justify-between items-center shadow-md">
          {/* Gold accent line */}
          <div className="w-1.5 h-full bg-brand-gold absolute left-0 bottom-0"></div>
-         <div className="py-3 px-6 flex-1 flex flex-col justify-center border-r border-gray-700/50">
+         <div className="py-2 px-6 flex-1 flex flex-col justify-center border-r border-gray-700/50">
             <div className="font-bold text-sm tracking-wide mb-1 text-brand-gold">MRC YALITIM İNŞAAT SAN. TİC. LTD. ŞTİ.</div>
             <div className="text-xs text-gray-300">1.OSB MAHALLESİ 5.CADDE NO:13/2</div>
          </div>
-         <div className="py-3 px-6 flex flex-col justify-center items-end min-w-[180px]">
+         <div className="py-2 px-6 flex flex-col justify-center items-end min-w-[180px]">
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-0.5">İletişim</div>
             <div className="font-bold text-sm tracking-wider">0532 258 52 44</div>
          </div>
