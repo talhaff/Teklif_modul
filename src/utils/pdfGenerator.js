@@ -44,7 +44,7 @@ export const generatePDF = async (elementId, filename = 'Teklif_Formu.pdf') => {
     
     // A4 size in mm
     const pdfWidth = 210;
-    const pdfHeight = 297;
+    const pageHeight = 297;
     
     const pdf = new jsPDF({
       orientation: 'portrait',
@@ -54,18 +54,21 @@ export const generatePDF = async (elementId, filename = 'Teklif_Formu.pdf') => {
     });
 
     const imgProps = pdf.getImageProperties(imgData);
-    const imgRatio = imgProps.width / imgProps.height;
+    const imgWidth = pdfWidth;
+    const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
     
-    let finalWidth = pdfWidth;
-    let finalHeight = finalWidth / imgRatio;
+    let heightLeft = imgHeight;
+    let position = 0;
 
-    // Correct if it exceeds page height
-    if (finalHeight > pdfHeight) {
-      finalHeight = pdfHeight;
-      finalWidth = finalHeight * imgRatio;
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+    heightLeft -= pageHeight;
+
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+      heightLeft -= pageHeight;
     }
-
-    pdf.addImage(imgData, 'PNG', 0, 0, finalWidth, finalHeight, undefined, 'FAST');
     pdf.save(filename);
     
     return true;

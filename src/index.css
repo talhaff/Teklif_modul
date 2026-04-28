@@ -18,12 +18,12 @@
 }
 
 .a4-paper {
-  aspect-ratio: 1 / 1.4142;
   width: 210mm;
   min-height: 297mm;
+  height: auto;
   background: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 10mm;
+  padding: 0 10mm 10mm 10mm;
   transform-origin: top center;
 }
 
@@ -32,5 +32,22 @@
   .a4-paper {
     transform: scale(var(--a4-scale, 1));
     margin-bottom: calc(-297mm * (1 - var(--a4-scale, 1)));
+  }
+}
+
+/* Baskı (Print) ayarları */
+@media print {
+  body {
+    background: white;
+  }
+  .a4-container {
+    padding: 0;
+  }
+  .a4-paper {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    min-height: auto;
   }
 }

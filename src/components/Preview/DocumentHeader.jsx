@@ -14,7 +14,7 @@ function DocumentHeader({ headerInfo }) {
   };
 
   return (
-    <div className="mb-4 px-2 pt-6">
+    <div className="mb-4 px-2 pt-2">
       {/* Top Section with Logo and Title */}
       <div className="flex justify-between items-end pb-4 mb-4 border-b border-gray-300">
         <div className="flex-shrink-0">
